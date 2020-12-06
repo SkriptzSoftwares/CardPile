@@ -1,0 +1,26 @@
+.bg-gradient-primary {
+  background-color: rgb(0,123,255);
+  background-size: cover;
+}
+
+.bg-primary {
+  background-color: rgb(0,123,255)!important;
+}
+
+.rotate-n-15 {
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+
+.text-left.link-custom {
+  color: #4b4b4b;
+}
+
+.link-custom:hover {
+  text-decoration: none!important;
+}
+
+a:hover {
+  color: #224abe;
+}
+
