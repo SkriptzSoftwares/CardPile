@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-md-9 col-lg-12 col-xl-6">
+        <div class="col-md-9 col-lg-7 col-xl-6">
             <div class="card shadow-lg o-hidden border-0 my-5">
                 <div class="card-body p-0">
-                    <div class="col-lg-7 col-xl-12">
+                    <div class="col-xl-12">
                         <div class="p-5">
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">{{ __('Verify Your Email Address') }}</h4>
