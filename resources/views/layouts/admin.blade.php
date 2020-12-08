@@ -38,27 +38,29 @@
                     <p class="mb-0">Market</p>
                 </div>
                 <li class="nav-item"><a class="nav-link" href="/admin/packages"><i
-                            class="fas fa-table"></i><span>Packages</span></a></li>
+                            class="fas fa-box"></i><span>Packages</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="/admin/categories"><i
-                            class="fas fa-table"></i><span>Categories</span></a></li>
+                            class="fas fa-folder"></i><span>Categories</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="/admin/orders"><i
-                            class="fas fa-table"></i><span>Orders</span></a></li>
+                            class="fas fa-shopping-cart"></i><span>Orders</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/engagement"><i
+                            class="fas fa-dollar-sign"></i><span>Engagement</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="/admin/market"><i
-                            class="fas fa-table"></i><span>Settings</span></a></li>
-{{--                <li class="nav-item">--}}
-{{--                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"--}}
-{{--                            aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i><span>Components</span></a>--}}
-{{--                        <div class="collapse" id="collapse-1">--}}
-{{--                            <div class="border rounded py-2 collapse-inner"--}}
-{{--                                 style="background-color: rgba(255,255,255,0); border-style: none !important;">--}}
-{{--                                <a class="collapse-item text-white-50 hover" href="/admin/packages">Packages</a>--}}
-{{--                                <a class="collapse-item text-white-50 hover" href="/admin/categories">Categories</a>--}}
-{{--                                <a class="collapse-item text-white-50 hover" href="/admin/orders">Orders</a>--}}
-{{--                                <a class="collapse-item text-white-50 hover" href="/admin/market">Settings</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
+                            class="fas fa-cogs"></i><span>Settings</span></a></li>
+                {{--                <li class="nav-item">--}}
+                {{--                    <div><a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"--}}
+                {{--                            aria-controls="collapse-1" href="#collapse-1" role="button"><i class="fas fa-cog"></i><span>Components</span></a>--}}
+                {{--                        <div class="collapse" id="collapse-1">--}}
+                {{--                            <div class="border rounded py-2 collapse-inner"--}}
+                {{--                                 style="background-color: rgba(255,255,255,0); border-style: none !important;">--}}
+                {{--                                <a class="collapse-item text-white-50 hover" href="/admin/packages">Packages</a>--}}
+                {{--                                <a class="collapse-item text-white-50 hover" href="/admin/categories">Categories</a>--}}
+                {{--                                <a class="collapse-item text-white-50 hover" href="/admin/orders">Orders</a>--}}
+                {{--                                <a class="collapse-item text-white-50 hover" href="/admin/market">Settings</a>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </li>--}}
                 <hr class="sidebar-divider"/>
                 <div class="sidebar-heading">
                     <p class="mb-0">Community</p>
@@ -226,7 +228,7 @@
                                             class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                         log</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/logout"><i
+                                    <a class="dropdown-item" href="{{route('logout')}}"><i
                                             class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>

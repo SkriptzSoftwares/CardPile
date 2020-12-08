@@ -27,4 +27,6 @@ Route::get('/test', function () {
 });
 
 //Admin
-Route::get('/admin', 'AdminController@index')->middleware('auth')->middleware("admin")->middleware("installed");
+Route::get('admin', 'AdminController@index')->middleware('auth')->middleware("admin");
+
+Route::get('admin/packages', 'AdminController@packages')->middleware('auth')->middleware("admin");
