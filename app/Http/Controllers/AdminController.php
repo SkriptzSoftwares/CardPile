@@ -10,7 +10,4 @@ class AdminController extends Controller
         return view('/admin/index');
     }
 
-    public function packages() {
-        return view('/admin/market/packages');
-    }
 }

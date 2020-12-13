@@ -29,4 +29,4 @@ Route::get('/test', function () {
 //Admin
 Route::get('admin', 'AdminController@index')->middleware('auth')->middleware("admin");
 
-Route::get('admin/packages', 'AdminController@packages')->middleware('auth')->middleware("admin");
+Route::resource('admin/packages', 'PackagesController')->middleware('auth')->middleware("admin");
