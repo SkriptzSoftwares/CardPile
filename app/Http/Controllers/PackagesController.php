@@ -35,7 +35,35 @@ class PackagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:30|unique:packages',
+            'price' => 'required|integer|max:1000000|min:0',
+            'stock' => 'required|integer|max:1000000|min:-1',
+            'type' => 'required',
+            'desc' => 'required|max:950',
+            'category' => 'required',
+            'image' => 'image|max:1999|nullable',
+            'file' => 'file|max:1999|nullable'
+        ]);
+
+        $package = new Package();
+        $package->name = $request->input('name');
+        $package->price = $request->input('price');
+        if($request->input('stock') != -1) {
+            $package->stock = $request->input('stock');
+        }
+        $package->type = $request->input('type');
+        $package->desc = $request->input('desc');
+        $package->category_id = $request->input('category');
+        if($request->input('image')) {
+            $request->image = $request->input('image');
+        }
+        if($request->input('file')) {
+            $request->file = $request->input('file');
+        }
+        $package->save();
+
+        return redirect('/admin/packages')->with('success', 'Successfully created package!');
     }
 
     /**

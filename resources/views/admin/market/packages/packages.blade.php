@@ -32,7 +32,11 @@
                         @foreach($packages as $pack)
                             <tr>
                                 <td>{{$pack->name}}</td>
-                                <td>{{$pack->stock}}</td>
+                                @if($pack->stock)
+                                    <td>{{$pack->stock}}</td>
+                                @else
+                                    <td>∞</td>
+                                @endif
                                 <td>{{$pack->price}}</td>
                                 <td>450$</td>
                                 <td>4500$</td>

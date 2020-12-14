@@ -19,6 +19,7 @@ class CreatePackagesTable extends Migration
             $table->integer('price');
             $table->text('desc');
             $table->string('image')->nullable();
+            $table->string('file')->nullable();
             $table->integer('stock')->nullable();
             $table->integer('category_id')->nullable();
             $table->integer('type')->default(0);
