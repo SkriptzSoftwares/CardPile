@@ -22,11 +22,15 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/test', function () {
-    return view('auth.verify');
-});
+Route::get('/shop', 'HomeController@shop');
 
 //Admin
 Route::get('admin', 'AdminController@index')->middleware('auth')->middleware("admin");
 
 Route::resource('admin/packages', 'PackagesController')->middleware('auth')->middleware("admin");
+
+Route::get('admin/market', 'AdminController@MarketSettings')->middleware('auth')->middleware("admin");
+
+Route::resource('/admin/alerts', 'AlertsController')->except(['index, show, create, edit'])->middleware('auth')->middleware("admin");
+
+

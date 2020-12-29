@@ -4,6 +4,14 @@
     Cardpile - Create package
 @endsection
 
+@section('head')
+    <script>
+        function displayFileSelector(elValue) {
+            document.getElementById('file').style.display = elValue.value == 0 ? 'block' : 'none';
+        }
+    </script>
+@endsection
+
 @section('content')
 
     <div class="container-fluid">
@@ -25,7 +33,7 @@
                     </div>
                 </div>
                 <div class="col-auto col-sm-12 col-md-6 col-lg-6 col-xl-3 mt-sm-3"><label for="stock">Stock (-1 for no limit)</label><input type="number" class="form-control @error('stock') is-invalid @enderror" id="stock" name="stock" placeholder="Stock" /></div>
-                <div class="col-auto col-sm-12 col-md-6 col-lg-6 col-xl-3 mt-sm-3"><label for="stock">Type</label><select class="form-control" name="type"><option value="0" selected>Digital File</option><option value="1">Physical Good</option><option value="2">Service</option></select></div>
+                <div class="col-auto col-sm-12 col-md-6 col-lg-6 col-xl-3 mt-sm-3"><label for="stock">Type</label><select class="form-control" name="type" onchange="displayFileSelector(this)"><option value="0" selected>Digital File</option><option value="1">Physical Good</option><option value="2">Service</option></select></div>
             </div>
             <div class="form-row mt-4">
                 <div class="col-md-12 col-lg-9 mt-sm-3"><label for="desc">Description</label><textarea class="form-control @error('desc') is-invalid @enderror" id="desc" name="desc" placeholder="Description" rows="8" style="resize: none" maxlength="950"></textarea></div>
@@ -46,7 +54,7 @@
                                 <div class="input-group-append"></div>
                             </div>
                         </div>
-                        <div class="col align-self-start mt-sm-3"><label for="file" style="z-index: -1; display: block">Digital File</label><input type="file" id="file" name="file" />
+                        <div class="col align-self-start mt-sm-3" id="file" style="display: block"><label for="file" style="z-index: -1; display: block">Digital File</label><input type="file" id="file" name="file" />
                             <div class="input-group">
                                 <div class="input-group-prepend"></div>
                                 <div class="input-group-append"></div>

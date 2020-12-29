@@ -10,4 +10,8 @@ class AdminController extends Controller
         return view('/admin/index');
     }
 
+    public function marketSettings() {
+        return view('/admin/market/settings');
+    }
+
 }

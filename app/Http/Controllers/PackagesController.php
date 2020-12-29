@@ -55,12 +55,36 @@ class PackagesController extends Controller
         $package->type = $request->input('type');
         $package->desc = $request->input('desc');
         $package->category_id = $request->input('category');
-        if($request->input('image')) {
-            $request->image = $request->input('image');
+        $imagefile = '';
+        if($request->hasFile('image')) {
+            $image = $request->input('image');
+
+            $filenameWithExt = $request->input('image');
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('image')->getClientOriginalExtension();
+
+            $imagefile = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('image')->storeAs('public/images', $imagefile);
+        } else {
+            $image = 'no-image.png';
         }
-        if($request->input('file')) {
-            $request->file = $request->input('file');
+        $filedownloadname = '';
+        if($request->hasFile('file')) {
+            $filenameWithExt = $request->input('file');
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('file')->getClientOriginalExtension();
+
+            $filedownloadname = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('file')->storeAs('public/files', $filedownloadname);
         }
+        $package->image = $imagefile;
+        $package->file = $filedownloadname;
         $package->save();
 
         return redirect('/admin/packages')->with('success', 'Successfully created package!');

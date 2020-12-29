@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class CreateAlertsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('alerts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->integer('index');
-            $table->string('desc')->nullable();
-            $table->boolean('hidden')->default(0);
+            $table->string('title');
+            $table->string('text');
+            $table->integer('level');
+            $table->boolean('enabled');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('alerts');
     }
 }
