@@ -45,12 +45,12 @@
 </head>
 <body>
 <div
-    class="container-fluid d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"
+    class="container-fluid d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
     style="min-height: 40px;background: #001b7d;">
     <h6 class="text-center text-white" style="margin-bottom: 0;">UNRELEASED VERSION, DO NOT REDISTRIBUTE!</h6>
 </div>
 <nav class="navbar navbar-dark navbar-expand-md bg-primary navigation-clean-button bg-primary-gradient">
-    <div class="container"><a class="navbar-brand" href="{{url("")}}"><img src="assets/img/TeAm-2.png"
+    <div class="container"><a class="navbar-brand" href="{{url("")}}"><img src="{{asset("assets/img/TeAm-2.png")}}"
                                                                            style="max-width: 200px;height: auto;"></a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                 class="navbar-toggler-icon"></span></button>
@@ -75,6 +75,9 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item dropdown-link-white" href="{{ url('home') }}">
+                                        Home
+                                    </a>
                                     @if(\App\Helpers\PermissionsHelper::instance()->getPerms('ADMIN'))
                                         <a class="dropdown-item dropdown-link-white" href="{{ url('admin') }}">
                                         Admin
@@ -126,12 +129,15 @@
                 </div>
                 <div class="col-md-6 item text">
                     <h3>Cardpile</h3>
-                    <p>Cardpile is a pre-made laravel template for developers to create their own shop quickly. It is free and easy to use. It is open source, so the community helps making changes and updates, and security patches are made very often.</p>
+                    <p>Cardpile is a pre-made laravel template for developers to create their own shop quickly. It is
+                        free and easy to use. It is open source, so the community helps making changes and updates, and
+                        security patches are made very often.</p>
                 </div>
             </div>
         </div>
     </footer>
-    <div class="col-lg-12 text-center" style="margin-top: 25px;"><a href="https://skriptz.wrenchdev.me"><img src="{{asset("UEassets/img/logolong.png")}}" style="max-width: 200px;"></a></div>
+    <div class="col-lg-12 text-center" style="margin-top: 25px;"><a href="https://skriptz.wrenchdev.me"><img
+                src="{{asset("UEassets/img/logolong.png")}}" style="max-width: 200px;"></a></div>
     <div class="col-lg-12">
         <h6 class="text-center text-muted">© 2020</h6>
     </div>

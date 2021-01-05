@@ -24,10 +24,12 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/shop', 'HomeController@shop');
 
+Route::get('/shop/{id}', 'HomeController@item');
+
 //Admin
 Route::get('admin', 'AdminController@index')->middleware('auth')->middleware("admin");
 
-Route::resource('admin/packages', 'PackagesController')->middleware('auth')->middleware("admin");
+Route::resource('admin/packages', 'PackagesController')->except(['show'])->middleware('auth')->middleware("admin");
 
 Route::get('admin/market', 'AdminController@MarketSettings')->middleware('auth')->middleware("admin");
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Package;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +29,13 @@ class HomeController extends Controller
 
     public function shop()
     {
-        return view('shop');
+        $packages = Package::paginate(25);
+        return view('shop')->with('packs', $packages);
+    }
+
+    public function item($id)
+    {
+        $package = Package::find($id);
+        return view('item')->with('pack', $package);
     }
 }

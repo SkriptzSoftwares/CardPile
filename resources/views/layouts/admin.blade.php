@@ -25,7 +25,7 @@
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-primary p-0">
         <div class="container-fluid d-flex flex-column p-0">
-            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="{{url("")}}">
                 <div class="sidebar-brand-icon"><img src="{{asset("assets/img/TeAm-2.png")}}" style="width: 100%;">
                 </div>
             </a>

@@ -40,8 +40,8 @@
                                 <td>{{$pack->price}}</td>
                                 <td>450$</td>
                                 <td>4500$</td>
-                                <td><a class="btn btn-sm btn-primary mr-1" role="button"><i class="fas fa-file-alt"></i></a>
-                                    <a class="btn btn-sm btn-warning mr-1" role="button"><i class="fas fa-cogs"></i></a>
+                                <td>
+                                    <a class="btn btn-sm btn-warning mr-1" href="{{url("admin/packages/" . $pack->id . "/edit")}}" role="button"><i class="fas fa-cogs"></i></a>
                                     <button class="btn btn-sm btn-danger mr-1" type="button" data-toggle="modal"
                                             data-target="#{{$pack->name}}-Modal"><i class="fas fa-trash"></i></button>
 
